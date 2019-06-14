@@ -1,5 +1,0 @@
-{ OCRkey: '43fd7ec5942c4e67a92f6885cc28452a',
-  uribase:
-   'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/recognizeText' }
-Promise { <pending> }
-https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/textOperations/cf52fa31-ed33-4daf-a32a-429cc82f0595
