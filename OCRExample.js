@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const result = require('dotenv').config();
-
 const inquirer =require("inquirer");
 
 const { recognizeText, getAllText } = require("./CognitiveServicesOCR");
