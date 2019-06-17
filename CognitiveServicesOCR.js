@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 const result = require('dotenv').config();
 
 // Replace <Subscription Key> with your valid subscription key.
@@ -21,8 +22,6 @@ function sleep(time) {
         }, time);
     });
 }
-
-
 
 // Part 1 of the API send a file to aysncBatchAnalyze - this returns service-location which is the url
 // part 2 uses to get the results
@@ -75,6 +74,7 @@ async function recognizeText(file) {
     let status = "notstarted";
     let data;
     let counter = 1;
+
     // is it running or notstarted or have we given it enough attempts and should fail out
     while (/running/i.test(status) || /notstarted/i.test(status || counter < process.env.readResultLimit)) {
         await sleep(1000 * counter++); // wait for operation to complete 
