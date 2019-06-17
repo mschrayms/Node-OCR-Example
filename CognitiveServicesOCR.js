@@ -8,12 +8,10 @@ const subscriptionKey = process.env.OCRkey;
 // subscription keys. For example, if you got your subscription keys from
 // westus, replace "westcentralus" in the URL below with "westus".
 // for example: https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/read/core/asyncBatchAnalyze
-const uriBase = `${process.env.serviceRegion}${process.env.uribase}`;
+const uriBase = process.env.uribase;
 
 const requestPromise = require('request-promise');
 var fs = require('fs');
-
-//const { uriBase, subscriptionKey } = require("./indexv5");
 
 function sleep(time) {
     return new Promise(function (resolve, reject) {
