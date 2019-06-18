@@ -12,6 +12,9 @@ const STATUS = {
 
 class OCR {
     constructor(options) {
+        if(!options.subscriptionKey) throw new Error('Subscription key missing from OCR Options!');
+        if(!options.uriBase) throw new Error('URI base missing from OCR Options!');
+        
         this.subscriptionKey = options.subscriptionKey;
         this.uriBase = options.uriBase;
         this.readResultLimit =  options.readResultLimit || 1;
