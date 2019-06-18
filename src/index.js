@@ -3,6 +3,12 @@
 const path = require('path');
 const ENV_FILE = path.join(__dirname, '.env');
 const env = require('dotenv').config({ path: ENV_FILE });
+
+// ensure we were able to successfully able to find and read the .env file
+if (env.error) {
+    throw env.error
+}
+
 const fs = require('fs');
 const inquirer =require("inquirer");
 
