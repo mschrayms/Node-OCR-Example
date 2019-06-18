@@ -1,15 +1,15 @@
 #sample input files
 parking.JPG
 parkinginvert.jpg
-
+sample_images/*
 #ignore my evolving attempts
 abandon
 
 #ignore VS code
-.vscode 
+**/.vscode 
 
 # .env
-.env
+**/.env
 
 # Logs
 logs
