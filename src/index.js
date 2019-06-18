@@ -1,11 +1,18 @@
 /*jshint esversion: 6 */
 'use strict';
-
+const path = require('path');
+const ENV_FILE = path.join(__dirname, '.env');
+const env = require('dotenv').config({ path: ENV_FILE });
 const fs = require('fs');
-const result = require('dotenv').config();
 const inquirer =require("inquirer");
 
-const { recognizeText, getAllText } = require("./CognitiveServicesOCR");
+const { OCR } = require("./CognitiveServicesOCR");
+const ocr = new OCR({
+        subscriptionKey : process.env.OCRkey,
+        uriBase : process.env.uribase,
+        readResultLimit :  process.env.readResultLimit
+    }
+);
 
 async function getFileName() {
     let filename="";
@@ -24,14 +31,13 @@ async function getFileName() {
 
 async function main() {
 
-    // get this input filename
-    var infile = await getFileName();
+    const infile = await getFileName();
  
-    if (fs.existsSync(infile)) {
+    if ( fs.existsSync(infile) ) {
         // Do OCR on the inbound file name
-        recognizeText(infile).then(function (data) {
-            console.log("Text returned from the image is:\n");
-            console.log(getAllText(data));
+        ocr.recognizeText(infile).then( function (data) {
+            const text = ocr.getAllText(data);
+            console.log(`Text returned from the image is:\n ${text}`);
         });
     }
     else {
