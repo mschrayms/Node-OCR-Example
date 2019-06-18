@@ -12,19 +12,18 @@ This demo relies on , [Azure Computer Vision](https://docs.microsoft.com/en-us/a
 ### Configure Access key
 * In the src folder of this repo, create a file called .env with the following structure
 ```
-let env = {
-  OCRkey : "<COMPUTER_VISION_KEY>",
-  uribase: '<URI_BASE>',
-  readResultLimit : '<readResultLimit>'
-}
+OcrKey="<COMPUTER_VISION_KEY>"
+UriBase='<URI_BASE>'
+ReadResultLimit='<readResultLimit>'
+
 ```
 
 #### Description of Variables:
 |Key              | Purpose                                                                            |
 |-----------------|------------------------------------------------------------------------------------|
-| OCRkey          | Cognitive services computer vision key                                             |
-| uribase         | Url for the OCR service                                                            |
-| readResultLimit | Number of retries to read the result from the OCR Service (optiona, defaults to 1) |
+| OcrKey          | Cognitive services computer vision key                                             |
+| UriBase         | Url for the OCR service                                                            |
+| ReadResultLimit | Number of retries to read the result from the OCR Service (optional, defaults to 3) |
 
 ### Running the Demo
 * Clone the repo.

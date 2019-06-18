@@ -14,9 +14,9 @@ const inquirer =require("inquirer");
 
 const { OCR } = require("./CognitiveServicesOCR");
 const ocr = new OCR({
-        subscriptionKey : process.env.OCRkey,
-        uriBase : process.env.uribase,
-        readResultLimit :  process.env.readResultLimit
+        subscriptionKey : process.env.OcrKey,
+        uriBase : process.env.UriBase,
+        readResultLimit :  process.env.ReadResultLimit
     }
 );
 
