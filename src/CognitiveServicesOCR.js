@@ -17,7 +17,7 @@ class OCR {
         
         this.subscriptionKey = options.subscriptionKey;
         this.uriBase = options.uriBase;
-        this.readResultLimit =  options.readResultLimit || 1;
+        this.readResultLimit =  options.readResultLimit || 3;
     }
 
     sleep(time) {
